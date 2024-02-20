@@ -27,16 +27,16 @@ def read_yaml(path_to_yaml: Path) -> ConfigBox:
 def create_directories(path_to_directories: list,verbose=True):
 
     for path in path_to_directories:
-        os.makedirs(Path,exist_ok=True)
+        os.makedirs(path,exist_ok=True)
         if verbose:
-            logger.info(f"created directoy at: {Path}")
+            logger.info(f"created directoy at: {path}")
 
 
 @ensure_annotations
 def save_json(path: Path,data: dict):
     with open(path,"w") as f:
         json.dump(data,f,indent=4)
-    logger.info(f"json file saved at: {Path}")
+    logger.info(f"json file saved at: {path}")
 
     
 
